@@ -5,9 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
+    <nav>
+        <h1>PollyGlot</h1>
+        <p>Perfect Translation Every Time</p>
+    </nav>
+    <section>
+        <form class="translateTextBox">
+            <h2>Text to translate 👇</h2>
+            <div class="translate-container">
+                <input type="text" placeholder="How are you?">
+            </div>
+            <h2>Select language 👇</h2>
+            <div class="language-container">
+                <div class="french-container">
+                    <input type="radio" id="french">
+                    <label for="french">French <img src="#" alt="France flag"></label>
+                </div>
+
+                <div class="hindi-container">
+                    <input type="radio" id="hindi">
+                    <label for="hindi">Hindi <img src="#" alt="France flag"></label>
+                </div>
+                <div class="arabic-container">
+                    <input type="radio" id="arabic">
+                    <label for="arabic">Arabic <img src="#" alt="France flag"></label>
+                </div>
+            </div>
+            <button type="submit">Translate</button>
+
+        </form>
+    </section>
+
+
+
+
+    <script src="index.js"></script>
 
 </body>
 
