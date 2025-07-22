@@ -11,3 +11,15 @@
 .font-big-shoulders {
     font-family: 'Big Shoulders Display', sans-serif;
 }
+
+img {
+    display: inline-block;
+}
+
+/* Ensure textarea handles multiple lines properly
+textarea#translateInput {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    resize: vertical;
+    min-height: 80px;
+} */

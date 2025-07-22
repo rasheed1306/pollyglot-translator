@@ -27,27 +27,27 @@
         <form id="translate">
             <h2 class="font-bold italic text-xl text-violet-800 bg-transparent text-center">Text to translate 👇</h2>
             <div class="translate-container h-30 px-2 py-4 rounded-md bg-gray-100">
-                <textarea class="w-full text-violet-800 text-xl resize-none" id="translateInput"
-                    placeholder="How are you?" rows="3"></textarea>
+                <textarea class="w-full text-violet-800 text-xl px-2 py-2" id="translateInput"
+                    placeholder="How are you?" rows="3" wrap="soft"></textarea>
             </div>
             <h2 class="font-bold italic text-xl text-violet-800 text-center mt-5">Select language 👇</h2>
             <div class="language-container my-3 mx-3">
-                <div class="french-container">
+                <div class="french-container p-2">
                     <input type="radio" name="language" id="french">
                     <label for="french">French <img src="images/france.png" alt="France flag"></label>
                 </div>
-                <div class="spanish-container">
+                <div class="spanish-container p-2">
                     <input type="radio" name="language" id="spanish">
                     <label for="spanish">Spanish <img src="images/spain.png" alt="Spain flag"></label>
                 </div>
-                <div class="japanese-container">
-                    <input type="radio" name=language id="japanese">
+                <div class="japanese-container p-2">
+                    <input type="radio" name="language" id="japanese">
                     <label for="japanese">Japanese <img src="images/japan.png" alt="Japanese flag"></label>
                 </div>
             </div>
-            <div class="button-container bg-violet-800">
-                <button class="text-neutral-100" type="submit">Translate</button>
-
+            <div class="button-container px-5 py-2 rounded-md bg-violet-800 text-center">
+                <button class="font-bold italic text-xl text-neutral-100" type="submit">Translate</button>
+                `
             </div>
         </form>
         <h2 id="translated">Translated To

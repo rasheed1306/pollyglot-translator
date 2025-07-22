@@ -39,6 +39,17 @@ function getPrompt(contents, language) {
     return `I would like you to translate the text '${contents}' in the language '${language}' in the most concise way possible.`;
 }
 
+// Ensure textarea allows Enter key for new lines
+document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.querySelector('#translateInput');
+    textarea.addEventListener('keydown', function (e) {
+        // Allow Enter key to create new lines (don't submit the form)
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.stopPropagation(); // Don't bubble up to form
+        }
+    });
+});
+
 translator.addEventListener('submit', (e) => {
     e.preventDefault();
 
