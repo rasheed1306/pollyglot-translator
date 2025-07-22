@@ -1,6 +1,6 @@
 const translator = document.querySelector('#translate');
 const url = 'https://openrouter.ai/api/v1/chat/completions';
-const authKey = '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';
+let authKey = apiKey;
 const answer = document.querySelector("#translated");
 const step1 = document.querySelectorAll(".step-1");
 const step2 = document.querySelectorAll(".step-2");

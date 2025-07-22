@@ -17,9 +17,9 @@ PollyGlot Translator is a simple web application that translates text into Frenc
 ## Setup Instructions
 
 1. **Get an API Key**: Sign up at [OpenRouter.ai](https://openrouter.ai/) and generate an API key.
-2. **Configure the Key**: Open `index.js` and replace the placeholder key with your API key:
+2. **Configure the Key**: Open `config.js` and replace `YOUR_API_KEY_HERE` with your actual API key:
    ```javascript
-   const authKey = 'YOUR_API_KEY_HERE';
+   export const apiKey = 'your-actual-api-key-here';
    ```
 3. Open `index.html` in your browser to start using the app.
 
