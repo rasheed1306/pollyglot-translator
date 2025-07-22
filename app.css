@@ -16,6 +16,10 @@ img {
     display: inline-block;
 }
 
+button {
+    width: 100%;
+}
+
 /* Ensure textarea handles multiple lines properly
 textarea#translateInput {
     white-space: pre-wrap;
