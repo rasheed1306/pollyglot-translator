@@ -1,11 +1,9 @@
 const translator = document.querySelector('#translate');
 const url = 'https://openrouter.ai/api/v1/chat/completions';
-// const defaultData = {
-//     model: 'openai/gpt-4o',
-//     messages: [{ role: 'user', content: 'What is the meaning of life?' }]
-// };
 const authKey = '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';
-const answer = document.querySelector("#translated")
+const answer = document.querySelector("#translated");
+const step1 = document.querySelectorAll(".step-1");
+const step2 = document.querySelectorAll(".step-2");
 
 const headers = {
     headers: {
@@ -39,6 +37,17 @@ function getPrompt(contents, language) {
     return `I would like you to translate the text '${contents}' in the language '${language}' in the most concise way possible.`;
 }
 
+function toggle(elements) {
+    elements.forEach(element => {
+        element.classList.toggle('hidden');
+    });
+}
+
+function toggleVisibility() {
+    toggle(step1);
+    toggle(step2);
+}
+
 translator.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -60,5 +69,28 @@ translator.addEventListener('submit', (e) => {
     // Create prompt and get response
     let prompt = getPrompt(translateInput, selectedLang);
     getResponse(prompt);
+
+    // Toggle to step 2 to show results
+    toggleVisibility();
 });
+
+// Add reset functionality
+const resetButton = document.querySelector('#reset-button');
+if (resetButton) {
+    resetButton.addEventListener('click', () => {
+        // Clear form inputs
+        document.querySelector('#translateInput').value = '';
+
+        // Uncheck all radio buttons
+        document.querySelectorAll('input[name="language"]').forEach(radio => {
+            radio.checked = false;
+        });
+
+        // Clear translation result
+        answer.textContent = 'Translated To';
+
+        // Toggle back to step 1
+        toggleVisibility();
+    });
+}
 
