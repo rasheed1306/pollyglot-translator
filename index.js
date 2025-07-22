@@ -54,14 +54,14 @@ translator.addEventListener('submit', (e) => {
     // Get input value and validate
     let translateInput = document.querySelector('#translateInput').value.trim();
     if (!translateInput) {
-        answer.textContent = "Please enter text to translate";
+        alert("Please enter text to translate");
         return;
     }
 
     // Get selected language and validate
     let selectedLangElement = document.querySelector('input[name="language"]:checked');
     if (!selectedLangElement) {
-        answer.textContent = "Please select a language";
+        alert("Please select a language");
         return;
     }
     let selectedLang = selectedLangElement.id;
@@ -70,9 +70,13 @@ translator.addEventListener('submit', (e) => {
     let prompt = getPrompt(translateInput, selectedLang);
     getResponse(prompt);
 
+    // Change step 2 original message to message entered
+    document.querySelector('.original-container').textContent = document.querySelector('#translateInput').value
+
     // Toggle to step 2 to show results
     toggleVisibility();
 });
+
 
 // Add reset functionality
 const resetButton = document.querySelector('#reset-button');
@@ -80,6 +84,7 @@ if (resetButton) {
     resetButton.addEventListener('click', () => {
         // Clear form inputs
         document.querySelector('#translateInput').value = '';
+        document.querySelector('.original-container').textContent = 'How are you? ';
 
         // Uncheck all radio buttons
         document.querySelectorAll('input[name="language"]').forEach(radio => {
