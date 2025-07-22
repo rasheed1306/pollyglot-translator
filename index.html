@@ -6,43 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="app.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,800&family=Poppins:ital,wght@0,400;1,600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 
-<body>
-    <nav>
-        <h1>PollyGlot</h1>
-        <p>Perfect Translation Every Time</p>
-    </nav>
-    <section>
-        <form class="translateTextBox">
-            <h2>Text to translate 👇</h2>
-            <div class="translate-container">
-                <input type="text" placeholder="How are you?">
+<body class="font-poppins">
+    <nav class="bg-violet-800 py-10 text-center">
+        <div class="flex items-center justify-center">
+            <img class="h-20 mr-4" src="images/image.png" alt="Parrot image">
+            <div>
+                <h1 class="font-big-shoulders font-extrabold text-5xl text-neutral-100 py-2">PollyGlot</h1>
+                <p class="font-semibold text-xs text-neutral-100">Perfect Translation Every Time</p>
             </div>
-            <h2>Select language 👇</h2>
+        </div>
+
+    </nav>
+    <section class="mx-3 my-5 border-solid border-4 rounded-md">
+        <form id="translate">
+            <h2 class="font-bold text-xl text-violet-800">Text to translate 👇</h2>
+            <div class="translate-container">
+                <input type="text" id="translateInput" placeholder="How are you?">
+            </div>
+            <h2 class="font-bold text-xl text-violet-800">Select language 👇</h2>
             <div class="language-container">
                 <div class="french-container">
-                    <input type="radio" id="french">
+                    <input type="radio" name="language" id="french">
                     <label for="french">French <img src="#" alt="France flag"></label>
                 </div>
-
                 <div class="hindi-container">
-                    <input type="radio" id="hindi">
+                    <input type="radio" name="language" id="hindi">
                     <label for="hindi">Hindi <img src="#" alt="France flag"></label>
                 </div>
                 <div class="arabic-container">
-                    <input type="radio" id="arabic">
+                    <input type="radio" name=language id="arabic">
                     <label for="arabic">Arabic <img src="#" alt="France flag"></label>
                 </div>
             </div>
-            <button type="submit">Translate</button>
+            <div class="button-container bg-violet-800">
+                <button class="text-neutral-100" type="submit">Translate</button>
 
+            </div>
         </form>
+        <h2 id="translated">Translated To
+        </h2>
     </section>
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
 
 </body>
