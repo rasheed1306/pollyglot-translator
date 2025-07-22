@@ -1,12 +1,13 @@
-html {
-    font-family: "Poppins", sans-serif;
+::placeholder {
+    font-weight: bold;
+    opacity: 1;
 }
 
-h1 {
-    font-family: "Big Shoulders", sans-serif;
-    font-size: 48
+/* Fallback font definitions */
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
 }
 
-p {
-    font-size: 12;
+.font-big-shoulders {
+    font-family: 'Big Shoulders Display', sans-serif;
 }
